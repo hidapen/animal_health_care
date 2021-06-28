@@ -15,7 +15,7 @@
 | pets_type           | string  | null: false               |
 | unknown_id          | integer |                           |
 | pets_birthday       | date    |                           |
-| pets_age            | date    |                           |
+| pets_age            | integer | null: false               |
 
 ### Association
 
