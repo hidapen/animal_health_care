@@ -1,3 +1,23 @@
-<h1>TOP PAGE</h1>
+<div class="header">
+  <div class="pets">
+    愛ペットのヘルスケア
+  </div>
+  <div class="pets" >
+    <%= link_to '新規登録', "/users/sign_up" %>
+    <%= link_to 'ログイン', "/users/sign_in" %>
+  </div>
+</div>
 
-<%= @tweet %>
+<div class="top">
+  <h1>TOP PAGE</h1>
+  <div class="contents">
+    <% @tweets.each do |tweet| %>
+      <div class="tweet">
+        <p><%= tweet.created_at %></p>
+        <span class="name">
+          <%= tweet.id %>
+        </span>
+      </div>
+    <% end %>
+  </div>
+</div>
