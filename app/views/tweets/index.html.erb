@@ -24,6 +24,8 @@
           <%= tweet.id %>
         </span>
       </div>
+      <li><%= link_to '詳細', tweet_path(tweet.id), class: "show" %></li>
+      <li><%= link_to '削除', tweet_path(tweet.id), method: :delete %></li>
     <% end %>
   </div>
 </div>

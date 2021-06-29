@@ -1,0 +1,14 @@
+<div class="contents row">
+  <ul class="more_list">
+    <% if user_signed_in? %>
+    <li>
+      <%= link_to '編集', edit_tweet_path(@tweet.id), method: :get %>
+    </li>
+    <li>
+      <%= link_to '削除', tweet_path(@tweet.id), method: :delete %>
+    </li>
+    <% end %>
+  </ul>
+  <p><%= @tweet.id %></p>
+  <%= link_to 'トップページへ戻る', root_path %>
+</div>
