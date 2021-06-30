@@ -1,20 +1,21 @@
 <div class="header">
-  <div class="pets">
-    愛ペットのヘルスケア
+  <div class="h1">
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Text:wght@300&display=swap" rel="stylesheet">
+    Animal Health Care
   </div>
-  <div class="pets" >
+  <div class="nav" >
     <% if user_signed_in? %>
-      <li><%= link_to current_user.pets_name, "#", class: "user-nickname" %></li>
-      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
-      <li><%= link_to '記録する', new_tweet_path, class: "tweet" %></li>
+      <li class="li"><%= link_to current_user.pets_name, "#", class: "user-nickname" %></li>
+      <li class="li"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+      <li class="li"><%= link_to '記録する', new_tweet_path, class: "tweet" %></li>
     <% else %>
-      <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
-      <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+      <li class="li"><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+      <li class="li"><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
     <% end %>
   </div>
 </div>
 
-<div class="top">
+<div class="body">
   <h1>TOP PAGE</h1>
   <div class="contents">
     <% @tweets.each do |tweet| %>
@@ -23,9 +24,9 @@
         <span class="name">
           <%= tweet.id %>
         </span>
+        <li><%= link_to '詳細', tweet_path(tweet.id), class: "show" %></li>
+        <li><%= link_to '削除', tweet_path(tweet.id), method: :delete %></li>
       </div>
-      <li><%= link_to '詳細', tweet_path(tweet.id), class: "show" %></li>
-      <li><%= link_to '削除', tweet_path(tweet.id), method: :delete %></li>
     <% end %>
   </div>
 </div>
