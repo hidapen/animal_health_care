@@ -1,10 +1,21 @@
-<%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
-<div class='form-wrap'>
-  <div class='form-header'>
-    <h1 class='form-header-text'>
-      会員情報入力
-    </h1>
+<div class="header">
+  <%= link_to 'Animal Health Care', root_path, class: "h1" %>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Text:wght@300&display=swap" rel="stylesheet">
+  <div class="nav" >
+    <% if user_signed_in? %>
+      <li class="li"><%= link_to current_user.pets_name, "#", class: "user-nickname" %></li>
+      <li class="li"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+      <li class="li"><%= link_to '記録する', new_tweet_path, class: "tweet" %></li>
+    <% else %>
+      <li class="li"><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+      <li class="li"><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+    <% end %>
   </div>
+</div>
+
+<%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
+<div class='contents'>
+  <h1 class='title'>会員情報入力</h1>
 
   <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -23,10 +34,8 @@
       <label class="form-text">お名前カナ(全角)</label>
       <span class="indispensable">必須</span>
     </div>
-    <div class='input-name-wrap'>
-      <%= f.text_area :human_last_name_rubi, class:"input-name", id:"human-last-name-kana", placeholder:"例) ヤマダ（飼い主様）" %>
-      <%= f.text_area :human_first_name_rubi, class:"input-name", id:"human-first-name-kana", placeholder:"例) リクタ（飼い主様）" %>
-    </div>
+    <%= f.text_area :human_last_name_rubi, class:"input-name", id:"human-last-name-kana", placeholder:"例) ヤマダ（飼い主様）" %>
+    <%= f.text_area :human_first_name_rubi, class:"input-name", id:"human-first-name-kana", placeholder:"例) リクタ（飼い主様）" %>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
@@ -41,60 +50,51 @@
       <span class="indispensable">必須</span>
     </div>
     <%= f.password_field :password, class:"input-default", id:"password", placeholder:"6文字以上の半角英数字" %>
-    <p class='info-text'>※英字と数字の両方を含めて設定してください</p>
+    <p>※パスワードは英字•数字を両方含む</p>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">パスワード(確認)</label>
       <span class="indispensable">必須</span>
     </div>
-    <%= f.password_field :password_confirmation, class:"input-default", id:"password-confirmation", placeholder:"同じパスワードを入力して下さい" %>
+    <%= f.password_field :password_confirmation, class:"input-default", id:"password-confirmation", placeholder:"同じパスワードを入力" %>
   </div>
     <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">お名前(全角)</label>
       <span class="indispensable">必須</span>
     </div>
-    <div class='input-name-wrap'>
-      <%= f.text_area :pets_name, class:"input-name", id:"pets-name", placeholder:"例) ぽち（愛ペット様）" %>
-    </div>
+    <%= f.text_area :pets_name, class:"input-name", id:"pets-name", placeholder:"例) ぽち（愛ペット様）" %>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">お名前カナ(全角)</label>
       <span class="indispensable">必須</span>
     </div>
-    <div class='input-name-wrap'>
-      <%= f.text_area :pets_name_rubi, class:"input-name", id:"pets-name-kana", placeholder:"例) ポチ（愛ペット様）" %>
-    </div>
+    <%= f.text_area :pets_name_rubi, class:"input-name", id:"pets-name-kana", placeholder:"例) ポチ（愛ペット様）" %>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">種類</label>
       <span class="indispensable">必須</span>
     </div>
-    <div class='input-name-wrap'>
-      <%= f.text_area :pets_type, class:"input-name", id:"pets-type", placeholder:"例) 柴犬（犬種）" %>
-    </div>
+    <%= f.text_area :pets_type, class:"input-name", id:"pets-type", placeholder:"例) 柴犬（犬種）" %>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">お誕生日</label>
       <span class="indispensable">必須</span>
     </div>
-    <div class='input-birth-wrap'>
-      <%= f.text_area :pets_birthday, class:"input-name", id:"pets-birthday", placeholder:"例) 20210101（半角 愛ペット様）" %>
-    </div>
+    <%= f.text_area :pets_birthday, class:"input-name", id:"pets-birthday", placeholder:"例) 20210101（半角 愛ペット様）" %>
+  </div>
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">ご年齢</label>
       <span class="indispensable">必須</span>
     </div>
-    <div class='input-name-wrap'>
-      <%= f.text_area :pets_age, class:"input-name", id:"pets-age", placeholder:"例) 5（半角 愛ペット様）" %>
-    </div>
+    <%= f.text_area :pets_age, class:"input-name", id:"pets-age", placeholder:"例) 5（半角 愛ペット様）" %>
   </div>
-    <p class='info-text'>※お誕生日とご年齢がご不明の方はこちらを選択してください</p>
+    <p class='info-text'>※お誕生日とご年齢がご不明の方はこちらを選択してください</p>  
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
