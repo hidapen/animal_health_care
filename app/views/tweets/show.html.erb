@@ -1,14 +1,30 @@
-<div class="contents row">
-  <ul class="more_list">
+<div class="header">
+  <%= link_to 'Animal Health Care', root_path, class: "h1" %>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Text:wght@300&display=swap" rel="stylesheet">
+  <div class="nav" >
     <% if user_signed_in? %>
-    <li>
-      <%= link_to '編集', edit_tweet_path(@tweet.id), method: :get %>
+      <li class="li"><%= link_to current_user.pets_name, "#", class: "user-nickname" %></li>
+      <li class="li"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+      <li class="li"><%= link_to '記録する', new_tweet_path, class: "tweet" %></li>
+    <% else %>
+      <li class="li"><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+      <li class="li"><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+    <% end %>
+  </div>
+</div>
+
+<div class="body">
+  <div class="contents">
+    <li class="li-wrapper">
+      <p><%= @tweet.id %></p>
     </li>
-    <li>
-      <%= link_to '削除', tweet_path(@tweet.id), method: :delete %>
+    <% if user_signed_in? %>
+    <li class="li-wrapper">
+      <%= link_to '編集', edit_tweet_path(@tweet.id), method: :get, class: "bold" %>
+    </li>
+    <li class="li-wrapper">
+      <%= link_to '削除', tweet_path(@tweet.id), method: :delete, class: "bold" %>
     </li>
     <% end %>
-  </ul>
-  <p><%= @tweet.id %></p>
-  <%= link_to 'トップページへ戻る', root_path %>
+  </div>
 </div>
