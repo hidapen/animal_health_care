@@ -1,8 +1,6 @@
 <div class="header">
-  <div class="h1">
+  <%= link_to 'Animal Health Care', root_path, class: "h1" %>
   <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Text:wght@300&display=swap" rel="stylesheet">
-    Animal Health Care
-  </div>
   <div class="nav" >
     <% if user_signed_in? %>
       <li class="li"><%= link_to current_user.pets_name, "#", class: "user-nickname" %></li>
@@ -16,17 +14,21 @@
 </div>
 
 <div class="body">
-  <h1>TOP PAGE</h1>
+  <h1>RECORD</h1>
   <div class="contents">
     <% @tweets.each do |tweet| %>
-      <div class="tweet">
+      <li class="li-wrapper">
         <p><%= tweet.created_at %></p>
-        <span class="name">
-          <%= tweet.id %>
-        </span>
-        <li><%= link_to '詳細', tweet_path(tweet.id), class: "show" %></li>
-        <li><%= link_to '削除', tweet_path(tweet.id), method: :delete %></li>
-      </div>
+      </li>
+      <li class="li-wrapper">
+        <p><%= tweet.id %></p>
+      </li>
+      <li class="li-wrapper">
+        <%= link_to '詳細', tweet_path(tweet.id), class: "bold" %>
+      </li>
+      <li class="li-wrapper">
+        <%= link_to '削除', tweet_path(tweet.id), method: :delete , class: "bold" %>
+      </li>
     <% end %>
   </div>
 </div>
