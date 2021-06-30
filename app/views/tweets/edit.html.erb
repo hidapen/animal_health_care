@@ -1,15 +1,28 @@
-<div class="items-sell-contents">
-  <div class="items-sell-main">
-    <h2 class="items-sell-title">愛ペットの体調情報を入力</h2>
-    <%= form_with model: @tweet, local: true do |f| %>
+<div class="header">
+  <%= link_to 'Animal Health Care', root_path, class: "h1" %>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Text:wght@300&display=swap" rel="stylesheet">
+  <div class="nav" >
+    <% if user_signed_in? %>
+      <li class="li"><%= link_to current_user.pets_name, "#", class: "user-nickname" %></li>
+      <li class="li"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+      <li class="li"><%= link_to '記録する', new_tweet_path, class: "tweet" %></li>
+    <% else %>
+      <li class="li"><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+      <li class="li"><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+    <% end %>
   </div>
+</div>
+
+<div class="contents">
+    <h2 class="title">愛ペットの体調情報（編集）</h2>
+    <%= form_with model: @tweet, local: true do |f| %>
     <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">元気度</label>
       <span class="indispensable">必須</span>
     </div>
     <div class='input-name-wrap'>
-      <%= f.text_area :energy_id, class:"input-name", id:"energy_id", placeholder:"例) とても良い・良い・普通・悪い・とても悪い" %>
+      <%= f.text_area :energy_id, class:"memo", id:"energy_id", placeholder:"例) とても良い・良い・普通・悪い・とても悪い" %>
     </div>
   </div>
   <div class="form-group">
@@ -18,7 +31,7 @@
       <span class="indispensable">必須</span>
     </div>
     <div class='input-name-wrap'>
-      <%= f.text_area :food_id, class:"input-name", id:"food_id", placeholder:"例) とても良い・良い・普通・悪い・とても悪い" %>
+      <%= f.text_area :food_id, class:"memo", id:"food_id", placeholder:"例) とても良い・良い・普通・悪い・とても悪い" %>
     </div>
   </div>
   <div class="form-group">
@@ -26,21 +39,21 @@
       <label class="form-text">トイレ回数</label>
       <span class="indispensable">必須</span>
     </div>
-    <%= f.text_area :toilet_id, class:"input-default", id:"toilet_id", placeholder:"例) とても多い・多い・普通・少ない・とても少ない" %>
+    <%= f.text_area :toilet_id, class:"memo", id:"toilet_id", placeholder:"例) とても多い・多い・普通・少ない・とても少ない" %>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">便の状態</label>
       <span class="indispensable">必須</span>
     </div>
-    <%= f.text_area :poop_status_id, class:"input-default", id:"poop_status_id", placeholder:"例) とても良い・良い・普通・悪い・とても悪い" %>
+    <%= f.text_area :poop_status_id, class:"memo", id:"poop_status_id", placeholder:"例) とても良い・良い・普通・悪い・とても悪い" %>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">運動量</label>
       <span class="indispensable">必須</span>
     </div>
-    <%= f.text_area :exercise_id, class:"input-default", id:"exercise_id", placeholder:"例) とても多い・多い・普通・少ない・とても少ない" %>
+    <%= f.text_area :exercise_id, class:"memo", id:"exercise_id", placeholder:"例) とても多い・多い・普通・少ない・とても少ない" %>
   </div>
     <div class="form-group">
     <div class='form-text-wrap'>
@@ -48,7 +61,7 @@
       <span class="indispensable">必須</span>
     </div>
     <div class='input-name-wrap'>
-      <%= f.text_area :sleep_id, class:"input-name", id:"sleep_id", placeholder:"例) とても多い・多い・普通・少ない・とても少ない" %>
+      <%= f.text_area :sleep_id, class:"memo", id:"sleep_id", placeholder:"例) とても多い・多い・普通・少ない・とても少ない" %>
     </div>
   </div>
   <div class="form-group">
@@ -57,11 +70,11 @@
       <span class="indispensable">必須</span>
     </div>
     <div class='input-name-wrap'>
-      <%= f.text_area :different_id, class:"input-name", id:"different_id", placeholder:"例) 誕生日ケーキを食べた" %>
+      <%= f.text_area :different_id, class:"memo", id:"different_id", placeholder:"例) 誕生日ケーキを食べた" %>
     </div>
   </div>
   <div class="actions">
-    <%= f.submit "更新する" %>
+    <%= f.submit "変更する" %>
   </div>
   <% end %>
 
