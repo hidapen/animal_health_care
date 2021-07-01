@@ -18,48 +18,36 @@
   <%= form_with model: @tweet, local: true do |f| %>
   <div class="form-group">
     <div class='form-text-wrap'>
-      <label class="form-text">元気度</label>
-      <span class="indispensable">必須</span>
       <%= f.label :energy_id, '元気度' %>
       <%= f.select :energy_id, {'良い': 1, '悪い': 2}, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
     </div>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
-      <label class="form-text">食欲</label>
-      <span class="indispensable">必須</span>
       <%= f.label :food_id, '食欲' %>
       <%= f.select :food_id, {'良い': 1, '悪い': 2}, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
     </div>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
-      <label class="form-text">トイレ回数</label>
-      <span class="indispensable">必須</span>
       <%= f.label :toilet_id, 'トイレ回数' %>
       <%= f.select :toilet_id, {'多い': 1, '少ない': 2}, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
     </div>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
-      <label class="form-text">便の状態</label>
-      <span class="indispensable">必須</span>
       <%= f.label :poop_status_id, '便の状態' %>
       <%= f.select :poop_status_id, {'良い': 1, '悪い': 2}, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
     </div>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
-      <label class="form-text">運動量</label>
-      <span class="indispensable">必須</span>
       <%= f.label :exercise_id, '運動量' %>
       <%= f.select :exercise_id, {'多い': 1, '少ない': 2}, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
     </div>
   </div>
     <div class="form-group">
     <div class='form-text-wrap'>
-      <label class="form-text">睡眠量</label>
-      <span class="indispensable">必須</span>
       <%= f.label :sleep_id, '睡眠量' %>
       <%= f.select :sleep_id, {'多い': 1, '少ない': 2}, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
     </div>
@@ -68,8 +56,6 @@
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
-      <label class="form-text">いつもと違うこと</label>
-      <span class="indispensable">必須</span>
       <%= f.label :different_id, 'いつもと違うこと' %>
       <%= f.select :different_id, {'ない': 1, 'ある': 2}, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
     </div>
