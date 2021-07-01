@@ -20,8 +20,9 @@
     <div class='form-text-wrap'>
       <label class="form-text">元気度</label>
       <span class="indispensable">必須</span>
+      <%= f.label :energy_id, '元気度' %>
+      <%= f.select :energy_id, {'良い': 1, '悪い': 2}, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
     </div>
-      <%= f.text_area :energy_id, class:"memo", id:"energy_id", placeholder:"例) とても良い・良い・普通・悪い・とても悪い" %>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
