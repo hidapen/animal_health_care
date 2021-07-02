@@ -19,37 +19,37 @@
   <div class="form-group">
     <div class='form-text-wrap'>
       <%= f.label :energy_id, '元気度' %>
-      <%= f.select :energy_id, {'良い': 1, '悪い': 2}, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
+      <%= f.collection_select(:energy_id, Energy.all, :id, :name, {}, {class:"form-control"}) %>
     </div>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
       <%= f.label :food_id, '食欲' %>
-      <%= f.select :food_id, {'良い': 1, '悪い': 2}, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
+      <%= f.collection_select(:food_id, Food.all, :id, :name, {}, {class:"form-control"}) %>
     </div>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
       <%= f.label :toilet_id, 'トイレ回数' %>
-      <%= f.select :toilet_id, {'多い': 1, '少ない': 2}, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
+      <%= f.collection_select(:toilet_id, Toilet.all, :id, :name, {}, {class:"form-control"}) %>
     </div>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
       <%= f.label :poop_status_id, '便の状態' %>
-      <%= f.select :poop_status_id, {'良い': 1, '悪い': 2}, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
+      <%= f.collection_select(:poop_status_id, PoopStatus.all, :id, :name, {}, {class:"form-control"}) %>
     </div>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
       <%= f.label :exercise_id, '運動量' %>
-      <%= f.select :exercise_id, {'多い': 1, '少ない': 2}, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
+      <%= f.collection_select(:exercise_id, Exercise.all, :id, :name, {}, {class:"form-control"}) %>
     </div>
   </div>
     <div class="form-group">
     <div class='form-text-wrap'>
       <%= f.label :sleep_id, '睡眠量' %>
-      <%= f.select :sleep_id, {'多い': 1, '少ない': 2}, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
+      <%= f.collection_select(:sleep_id, Sleep.all, :id, :name, {}, {class:"form-control"}) %>
     </div>
     <div class='input-name-wrap'>
     </div>
@@ -57,7 +57,7 @@
   <div class="form-group">
     <div class='form-text-wrap'>
       <%= f.label :different_id, 'いつもと違うこと' %>
-      <%= f.select :different_id, {'ない': 1, 'ある': 2}, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
+      <%= f.collection_select(:different_id, Different.all, :id, :name, {}, {class:"form-control"}) %>
     </div>
   </div>
   <div class="actions">
