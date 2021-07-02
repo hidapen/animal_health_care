@@ -1,6 +1,8 @@
 class TweetsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
-    @tweets = Tweet.all
+    @tweets = current_user.tweets.all.order("created_at DESC")
   end
   def new
     @tweet = Tweet.new
@@ -38,5 +40,4 @@ class TweetsController < ApplicationController
   def tweet_params
     params.require(:tweet).permit(:energy_id,:food_id,:toilet_id,:poop_status_id,:exercise_id,:sleep_id,:different_id).merge(user_id: current_user.id)
   end
-
 end
