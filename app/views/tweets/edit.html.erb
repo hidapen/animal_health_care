@@ -18,59 +18,44 @@
     <%= form_with model: @tweet, local: true do |f| %>
     <div class="form-group">
     <div class='form-text-wrap'>
-      <label class="form-text">元気度</label>
-      <span class="indispensable">必須</span>
-    </div>
-    <div class='input-name-wrap'>
-      <%= f.text_area :energy_id, class:"memo", id:"energy_id", placeholder:"例) とても良い・良い・普通・悪い・とても悪い" %>
+      <%= f.label :energy_id, '元気度' %>
+      <%= f.collection_select(:energy_id, Energy.all, :id, :name, {}, {class:"form-control"}) %>
     </div>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
-      <label class="form-text">食欲</label>
-      <span class="indispensable">必須</span>
-    </div>
-    <div class='input-name-wrap'>
-      <%= f.text_area :food_id, class:"memo", id:"food_id", placeholder:"例) とても良い・良い・普通・悪い・とても悪い" %>
+      <%= f.label :food_id, '食欲' %>
+      <%= f.collection_select(:food_id, Food.all, :id, :name, {}, {class:"form-control"}) %>
     </div>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
-      <label class="form-text">トイレ回数</label>
-      <span class="indispensable">必須</span>
+      <%= f.label :toilet_id, 'トイレ回数' %>
+      <%= f.collection_select(:toilet_id, Toilet.all, :id, :name, {}, {class:"form-control"}) %>
     </div>
-    <%= f.text_area :toilet_id, class:"memo", id:"toilet_id", placeholder:"例) とても多い・多い・普通・少ない・とても少ない" %>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
-      <label class="form-text">便の状態</label>
-      <span class="indispensable">必須</span>
+      <%= f.label :poop_status_id, '便の状態' %>
+      <%= f.collection_select(:poop_status_id, PoopStatus.all, :id, :name, {}, {class:"form-control"}) %>
     </div>
-    <%= f.text_area :poop_status_id, class:"memo", id:"poop_status_id", placeholder:"例) とても良い・良い・普通・悪い・とても悪い" %>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
-      <label class="form-text">運動量</label>
-      <span class="indispensable">必須</span>
+      <%= f.label :exercise_id, '運動量' %>
+      <%= f.collection_select(:exercise_id, Exercise.all, :id, :name, {}, {class:"form-control"}) %>
     </div>
-    <%= f.text_area :exercise_id, class:"memo", id:"exercise_id", placeholder:"例) とても多い・多い・普通・少ない・とても少ない" %>
   </div>
     <div class="form-group">
     <div class='form-text-wrap'>
-      <label class="form-text">睡眠量</label>
-      <span class="indispensable">必須</span>
-    </div>
-    <div class='input-name-wrap'>
-      <%= f.text_area :sleep_id, class:"memo", id:"sleep_id", placeholder:"例) とても多い・多い・普通・少ない・とても少ない" %>
+      <%= f.label :sleep_id, '睡眠量' %>
+      <%= f.collection_select(:sleep_id, Sleep.all, :id, :name, {}, {class:"form-control"}) %>
     </div>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
-      <label class="form-text">いつもと違うこと</label>
-      <span class="indispensable">必須</span>
-    </div>
-    <div class='input-name-wrap'>
-      <%= f.text_area :different_id, class:"memo", id:"different_id", placeholder:"例) 誕生日ケーキを食べた" %>
+      <%= f.label :different_id, 'いつもと違うこと' %>
+      <%= f.collection_select(:different_id, Different.all, :id, :name, {}, {class:"form-control"}) %>
     </div>
   </div>
   <div class="actions">
