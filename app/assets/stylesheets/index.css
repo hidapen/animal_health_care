@@ -41,6 +41,12 @@
   width: 100vw;
   align-items: center;
   background-color: white;
+  list-style: none;
+}
+
+.body a {
+  text-decoration: none;
+  color: white;
 }
 
 h1 {
@@ -49,6 +55,18 @@ h1 {
   text-align: center;
   border-bottom: 1px solid #4b4b4b;
   width: 200px;
+  margin: 40px auto;
+}
+
+.body-li {
+  display: block;
+  width: 150px;
+  padding: 10px;
+  border: 1px solid white;
+  background-color: #4b4b4b;
+  font-weight :bold;
+  text-decoration: none;
+  text-align: center;
   margin: 40px auto;
 }
 
