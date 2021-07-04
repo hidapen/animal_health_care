@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2021_06_28_055923) do
     t.integer "sleep_id", null: false
     t.integer "different_id", null: false
     t.bigint "user_id", null: false
+    t.datetime "start_time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_tweets_on_user_id"

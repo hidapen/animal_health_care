@@ -9,6 +9,7 @@ class CreateTweets < ActiveRecord::Migration[6.0]
       t.integer :sleep_id,       null: false
       t.integer :different_id,   null: false
       t.references :user,        null: false, foreign_key: true
+      t.datetime :start_time
       t.timestamps
     end
   end
