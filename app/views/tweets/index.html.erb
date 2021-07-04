@@ -34,24 +34,7 @@
   </div>
 
 
-  <tbody>
-    <% @tweets.each do |tweet| %>
-      <tr>
-        <td><%= tweet.title %></td>
-        <td><%= tweet.start_time.strftime("%Y-%m-%d %H:%M") %></td>
-        <td><%= link_to 'Show', tweet %></td>
-        <td><%= link_to 'Edit', edit_blog_path(tweet.id) %></td>
-        <td><%= link_to 'Destroy',blog_path(tweet.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
   <%= month_calendar events: @tweets do |date, tweets| %>
     <%= date.day %>
-
-    <% tweets.each do |tweet| %>
-      <div>
-        <%= link_to tweet.id, tweet %>
-      </div>
-    <% end %>
   <% end %>
 </div>
