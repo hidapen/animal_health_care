@@ -1,11 +1,11 @@
 class Exercise < ActiveHash::Base
   self.data = [
     { id: 1, name: '--' },
-    { id: 2, name: 'とても良い' },
-    { id: 3, name: '良い' },
+    { id: 2, name: 'とても多い' },
+    { id: 3, name: '多い' },
     { id: 4, name: '普通' },
-    { id: 5, name: '悪い' },
-    { id: 6, name: 'とても悪い' },
+    { id: 5, name: '少ない' },
+    { id: 6, name: 'とても少ない' },
   ]
 
   include ActiveHash::Associations

@@ -24,7 +24,7 @@
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
-      <%= f.label :food_id, '食欲' %>
+      <%= f.label :food_id, '食欲度' %>
       <%= f.collection_select(:food_id, Food.all, :id, :name, {}, {class:"form-control"}) %>
     </div>
   </div>

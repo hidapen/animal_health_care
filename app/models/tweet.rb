@@ -1,8 +1,15 @@
 class Tweet < ApplicationRecord
   belongs_to :user
+  validates :user_id, presence: true
 
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :energy, :food, :toilet, :poop_status, :exercise, :sleep, :different
+  belongs_to :energy
+  belongs_to :food
+  belongs_to :toilet
+  belongs_to :poop_status
+  belongs_to :exercise
+  belongs_to :sleep
+  belongs_to :different
 
   with_options numericality: { other_than: 1 } do
     validates :energy_id
@@ -13,5 +20,4 @@ class Tweet < ApplicationRecord
     validates :sleep_id
     validates :different_id
   end
-  validates :user_id, presence: true
 end
