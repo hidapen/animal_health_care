@@ -15,8 +15,8 @@
 <div class="body">
   <h1>RECORD</h1>
   <li class="body-li"><%= link_to '記録する', new_tweet_path, class: "tweet" %></li>
+</div>
 
   <%= month_calendar events: @tweets do |date, tweets| %>
     <%= date.day %>
   <% end %>
-</div>
