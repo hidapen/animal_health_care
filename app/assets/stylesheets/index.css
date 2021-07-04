@@ -34,3 +34,81 @@
 .li:hover {
   font-weight :bold;
 }
+
+/* 投稿一覧 */
+.body {
+  height: calc(100vh - 70px);
+  width: 100vw;
+  align-items: center;
+  background-color: white;
+  list-style: none;
+}
+
+.body a {
+  text-decoration: none;
+  color: #4b4b4b;
+}
+
+h1 {
+  font-weight :bold;
+  padding: 10px 0 10px;
+  text-align: center;
+  border-bottom: 1px solid #4b4b4b;
+  width: 200px;
+  margin: 40px auto;
+}
+
+.body-li {
+  display: block;
+  width: 150px;
+  padding: 10px;
+  border: 1px solid #4b4b4b;
+  background-color: #4b4b4b;
+  text-decoration: none;
+  text-align: center;
+  margin: 40px auto;
+}
+
+.body-li a {
+  color: white;
+  font-weight :bold;
+}
+
+.body-li2 {
+  margin: auto 10px ;
+  border: 1px solid white;
+  text-decoration: none;
+  text-align: center;
+}
+
+.contents {
+  list-style: none;
+  width: 50vw;
+  margin: 0 auto;
+  background-color: white;
+}
+
+.contents a {
+  text-decoration: none;
+}
+
+.contents-mini {
+  display: flex;
+}
+
+.li-wrapper {
+  font-size: 20px;
+  text-align: center;
+
+}
+
+.bold {
+  margin: 0 0 0 15px;
+
+}
+
+.bold:hover {
+  font-weight :bold;
+}
+
+/* /投稿一覧 */
