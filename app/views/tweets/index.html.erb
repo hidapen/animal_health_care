@@ -27,6 +27,10 @@
         <p>睡眠量：<%= tweet.sleep.name %></p>
         <p>いつもと違うこと：<%= tweet.different.name %></p>
       </div>
+      <div class="contents-mini">
+        <%= link_to '詳細', tweet_path(tweet.id), class: "bold" %>
+        <%= link_to '削除', tweet_path(tweet.id), method: :delete, class: "bold" %>
+      </div>
     <% end %>
   <% end %>
 </div>

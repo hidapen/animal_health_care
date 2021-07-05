@@ -15,16 +15,46 @@
 
 <div class="body">
   <div class="contents">
-    <li class="li-wrapper">
-      <p><%= @tweet.id %></p>
-    </li>
+  <h1>詳細</h1>
+    <p class="time"><%= l @tweet.start_time, format: :short %></p>
+    <div class="link">
     <% if user_signed_in? %>
-    <li class="li-wrapper">
-      <%= link_to '編集', edit_tweet_path(@tweet.id), method: :get, class: "bold" %>
-    </li>
-    <li class="li-wrapper">
-      <%= link_to '削除', tweet_path(@tweet.id), method: :delete, class: "bold" %>
-    </li>
+      <%= link_to '編集', edit_tweet_path(@tweet.id), method: :get, class: "edit" %>
+      <%= link_to '削除', tweet_path(@tweet.id), method: :delete, class: "delete" %>
     <% end %>
+    </div>
+
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-tweet">元気度</th>
+          <td class="detail-value"><%= @tweet.energy.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-tweet">食欲度</th>
+          <td class="detail-value"><%= @tweet.food.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-tweet">トイレ回数</th>
+          <td class="detail-value"><%= @tweet.toilet.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-tweet">便の状態</th>
+          <td class="detail-value"><%= @tweet.poop_status.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-tweet">運動量</th>
+          <td class="detail-value"><%= @tweet.exercise.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-tweet">睡眠量</th>
+          <td class="detail-value"><%= @tweet.sleep.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-tweet">普段と違う点</th>
+          <td class="detail-value"><%= @tweet.different.name %></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
