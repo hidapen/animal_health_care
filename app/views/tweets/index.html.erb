@@ -1,35 +1,13 @@
-<div class="header">
-  <%= link_to 'Animal Health Care', root_path, class: "h1" %>
-  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Text:wght@300&display=swap" rel="stylesheet">
-  <div class="nav" >
-    <% if user_signed_in? %>
-      <li class="li"><%= link_to current_user.pets_name, "#", class: "user-nickname" %></li>
-      <li class="li"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
-    <% else %>
-      <li class="li"><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
-      <li class="li"><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
-    <% end %>
-  </div>
-</div>
+<%= render "shared/header" %>
 
 <div class="body">
   <h1>RECORD</h1>
-  <li class="body-li"><%= link_to '記録する', new_tweet_path, class: "tweet" %></li>
-  <li class="simple-calendar"><%= month_calendar events: @tweets do |date, tweets| %></li>
+  <li class="new"><%= link_to '記録する', new_tweet_path, class: "tweet" %></li>
+  <%= month_calendar events: @tweets do |date, tweets| %>
     <%= date.day %>
     <% tweets.each do |tweet| %>
       <div>
-        <p>元気度：<%= tweet.energy.name %></p>
-        <p>食欲度：<%= tweet.food.name %></p>
-        <p>トイレ回数：<%= tweet.toilet.name %></p>
-        <p>便の状態：<%= tweet.poop_status.name %></p>
-        <p>運動量：<%= tweet.exercise.name %></p>
-        <p>睡眠量：<%= tweet.sleep.name %></p>
-        <p>いつもと違うこと：<%= tweet.different.name %></p>
-      </div>
-      <div class="contents-mini">
-        <%= link_to '詳細', tweet_path(tweet.id), class: "bold" %>
-        <%= link_to '削除', tweet_path(tweet.id), method: :delete, class: "bold" %>
+      <%= link_to '詳細', tweet_path(tweet.id), class: "bold" %>
       </div>
     <% end %>
   <% end %>
