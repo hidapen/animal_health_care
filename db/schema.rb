@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2021_06_28_055923) do
     t.integer "exercise_id", null: false
     t.integer "sleep_id", null: false
     t.integer "different_id", null: false
+    t.text "memo"
     t.bigint "user_id", null: false
     t.datetime "start_time"
     t.datetime "created_at", precision: 6, null: false

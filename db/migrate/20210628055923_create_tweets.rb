@@ -8,6 +8,7 @@ class CreateTweets < ActiveRecord::Migration[6.0]
       t.integer :exercise_id,    null: false
       t.integer :sleep_id,       null: false
       t.integer :different_id,   null: false
+      t.text  :memo
       t.references :user,        null: false, foreign_key: true
       t.datetime :start_time
       t.timestamps

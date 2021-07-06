@@ -28,9 +28,13 @@
   resize: none;
 }
 
-/* /質問と回答欄 */
-
 .form-control {
   border-radius: 4px;
   border: 1px solid #4b4b4b;
 }
+
+.memo {
+  border: 1px solid #4b4b4b;
+}
+/* /質問と回答欄 */
+
