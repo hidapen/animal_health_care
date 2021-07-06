@@ -15,7 +15,10 @@
 <div class="body">
   <h1>RECORD</h1>
   <li class="body-li"><%= link_to '記録する', new_tweet_path, class: "tweet" %></li>
-  <li class="simple-calendar"><%= month_calendar events: @tweets do |date, tweets| %></li>
+  <%= month_calendar events: @tweets do |date, tweets| %>
     <%= date.day %>
+    <% tweets.each do |tweet| %>
+      <%= link_to '詳細', tweet_path(tweet.id), class: "bold" %>
+    <% end %>
   <% end %>
 </div>
