@@ -1,4 +1,15 @@
 ja:
+  activerecord:
+    attributes:
+      user:
+        human_first_name: 飼い主様のお名前（名）
+        human_last_name: 飼い主様のお名前（姓）
+        human_first_name_rubi: 飼い主様のお名前ふりがな（名）
+        human_last_name_rubi: 飼い主様のお名前ふりがな（姓）
+        pets_name: 愛ペット様のお名前
+        pets_name_rubi: 愛ペット様のお名前ふりがな
+        pets_type: 愛ペット様の種類
+        pets_age: 愛ペット様のご年齢
   time:
     formats:
       default: "%Y/%m/%d %H:%M:%S"
