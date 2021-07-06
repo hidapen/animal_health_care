@@ -13,7 +13,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string  :pets_name,             null: false
       t.string  :pets_name_rubi,        null: false
       t.string  :pets_type,             null: false
-      t.integer :unknown_id
       t.date    :pets_birthday
       t.integer :pets_age,              null: false
 

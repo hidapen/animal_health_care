@@ -37,7 +37,6 @@ ActiveRecord::Schema.define(version: 2021_06_28_055923) do
     t.string "pets_name", null: false
     t.string "pets_name_rubi", null: false
     t.string "pets_type", null: false
-    t.integer "unknown_id"
     t.date "pets_birthday"
     t.integer "pets_age", null: false
     t.string "reset_password_token"
