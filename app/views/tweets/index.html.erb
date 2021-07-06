@@ -9,6 +9,9 @@
       <div>
       <%= link_to '詳細', tweet_path(tweet.id), class: "bold" %>
       </div>
+      <% if tweet.different_id == 3 %>
+        <p class="different_day">＊＊＊</p>
+      <% end %>
     <% end %>
   <% end %>
 </div>

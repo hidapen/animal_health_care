@@ -41,4 +41,10 @@ h1 {
   font-weight :bold;
 }
 
+.different_day {
+  color: blue;
+  font-size: 12px;
+  font-weight: bold;
+}
+
 /* /投稿一覧 */
