@@ -2,7 +2,7 @@ class TweetsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @tweets = Tweet.all
+    @tweets = current_user.tweets.all
   end
 
   def new
