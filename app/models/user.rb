@@ -10,6 +10,7 @@ class User < ApplicationRecord
       validates :human_last_name
       validates :pets_name
       validates :pets_type
+      validates :pets_age
     end
     with_options format: {with: /\A[ァ-ヶー]+\z/, message: "全角（カタカナ）を使用してください"} do
       validates :human_first_name_rubi
