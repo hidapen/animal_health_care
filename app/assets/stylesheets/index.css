@@ -35,16 +35,6 @@
   font-weight :bold;
 }
 
-/* カレンダー */
-.simple-calendar {
-  margin: auto 10px ;
-  border: 1px solid white;
-  text-decoration: none;
-  text-align: center;
-}
-
-/* /カレンダー */
-
 /* 投稿一覧 */
 .body {
   height: calc(100vh - 70px);
