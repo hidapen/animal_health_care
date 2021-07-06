@@ -6,7 +6,9 @@
   <%= month_calendar events: @tweets do |date, tweets| %>
     <%= date.day %>
     <% tweets.each do |tweet| %>
+      <div>
       <%= link_to '詳細', tweet_path(tweet.id), class: "bold" %>
+      </div>
     <% end %>
   <% end %>
 </div>

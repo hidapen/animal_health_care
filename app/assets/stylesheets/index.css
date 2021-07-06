@@ -37,11 +37,6 @@ h1 {
   font-weight :bold;
 }
 
-.bold {
-  margin: 0 0 0 15px;
-
-}
-
 .bold:hover {
   font-weight :bold;
 }
