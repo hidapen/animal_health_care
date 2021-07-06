@@ -3,7 +3,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Text:wght@300&display=swap" rel="stylesheet">
   <div class="nav" >
     <% if user_signed_in? %>
-      <li class="li"><%= link_to current_user.pets_name, "#", class: "user-nickname" %></li>
+      <li class="li"><%= link_to current_user.pets_name, edit_user_registration_path, class: "user-nickname" %></li>
       <li class="li"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
     <% else %>
       <li class="li"><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
