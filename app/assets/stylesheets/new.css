@@ -15,25 +15,6 @@
 
 }
 
-/* 共通 */
-.indispensable {
-  background: #ea352d;
-  margin-left: 8px;
-  padding: 3px;
-  border-radius: 2px;
-  color: #fff;
-  font-size: 12px;
-  font-weight: bold;
-}
-
-.form-text {
-  font-weight: bold;
-  min-width: 170px;
-  margin-bottom: 10px;
-}
-
-/* /共通 */
-
 /* 記録指定日時 */
 .form-time {
   padding-bottom: 4vh;
