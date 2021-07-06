@@ -3,12 +3,10 @@
 <div class="body">
   <h1>RECORD</h1>
   <li class="new"><%= link_to '記録する', new_tweet_path, class: "tweet" %></li>
-  <div class="date-edit">
   <%= month_calendar events: @tweets do |date, tweets| %>
     <%= date.day %>
     <% tweets.each do |tweet| %>
       <%= link_to '詳細', tweet_path(tweet.id), class: "bold" %>
     <% end %>
   <% end %>
-  </div>
 </div>
