@@ -45,6 +45,9 @@
       <%= f.collection_select(:different_id, Different.all, :id, :name, {}, {class:"form-control"}) %>
     </div>
   </div>
+  <div class="form-group">
+    <%= f.text_area :memo, class:"memo", id:"memo", placeholder:"メモ欄：いつもより軟便／長時間の散歩etc..." %>
+  </div>
   <div class="actions">
     <%= f.submit "変更する" %>
   </div>
