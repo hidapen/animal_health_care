@@ -2,6 +2,8 @@
 
 <div class="contents">
   <h2 class="title">愛ペットの体調情報</h2>
+
+  <%# 質問と回答 %>
   <%= form_with model: @tweet, local: true do |f| %>
   <div class="form-group">
     <div class='form-time'>
@@ -9,6 +11,8 @@
       <%= f.datetime_select(:start_time, class:"form-control") %>
       <p class="comment">※記録したい日時を指定してください</p>
     </div>
+  </div>
+  <div class="form-group">
     <div class='form-text-wrap'>
       <%= f.label :energy_id, '元気度' %>
       <%= f.collection_select(:energy_id, Energy.all, :id, :name, {}, {class:"form-control"}) %>
@@ -55,6 +59,19 @@
   <div class="form-group">
     <%= f.text_area :memo, class:"memo", id:"memo", placeholder:"メモ欄：いつもより軟便／長時間の散歩etc..." %>
   </div>
+  <%# /質問と回答 %>
+
+  <%# 画像挿入 %>
+  <div class="form-group">
+    <div class="weight-bold-text">
+      画像 クリックしてファイルをアップロード
+    </div>
+    <div class="click-upload">
+      <%= f.file_field :image, id:"item-image" %>
+    </div>
+  </div>
+  <%# /画像挿入 %>
+
   <div class="actions">
     <%= f.submit "記録する" %>
   </div>

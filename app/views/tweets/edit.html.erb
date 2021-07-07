@@ -48,6 +48,17 @@
   <div class="form-group">
     <%= f.text_area :memo, class:"memo", id:"memo", placeholder:"メモ欄：いつもより軟便／長時間の散歩etc..." %>
   </div>
+  <%# 画像挿入 %>
+  <div class="form-group">
+    <div class="weight-bold-text">
+      画像 クリックしてファイルをアップロード
+    </div>
+    <div class="click-upload">
+      <%= f.file_field :image, id:"item-image" %>
+    </div>
+  </div>
+  <%# /画像挿入 %>
+
   <div class="actions">
     <%= f.submit "変更する" %>
   </div>

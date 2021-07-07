@@ -1,6 +1,5 @@
 /* 記録指定日時 */
 .form-time {
-  padding-bottom: 4vh;
   font-size: 16px;
   resize: none;
   border-radius: 4px;
@@ -14,7 +13,7 @@
 /* /記録指定日時 */
 
 
-/* 質問と回答欄 */
+/* 質問と回答 */
 .form-group {
   padding: 2vh 0;
 }
@@ -36,5 +35,16 @@
 .memo {
   border: 1px solid #4b4b4b;
 }
-/* /質問と回答欄 */
+/* /質問と回答 */
 
+/* 画像挿入 */
+.click-upload {
+  padding-bottom: 24px;
+}
+/* /画像挿入 */
+
+/* 送信ボタン */
+.actions {
+  padding-bottom: 24px;
+}
+/* /送信ボタン */

@@ -13,7 +13,7 @@
 
     <table class="detail-table">
       <tbody>
-        <%= image_tag message.image, class: 'message-image' if message.image.attached? %>
+        <%= image_tag @tweet.image, class: 'tweet-image' if @tweet.image.attached? %>
         <tr>
           <th class="detail-tweet">元気度</th>
           <td class="detail-value"><%= @tweet.energy.name %></td>
