@@ -1,36 +1,77 @@
+* {
+  box-sizing: border-box;
+}
+
 .header {
-  font-family: 'Big Shoulders Text', cursive;
-  height: 70px;
   width: 100vw;
-  padding: 20px 4% 20px;
-  background-color: rgb(238, 238, 238);
+  padding: 2vh 15vw;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  background-color: rgb(238, 238, 238);
+  font-family: 'Big Shoulders Text', cursive;
+}
+
+.top-page {
+  width: 50vw;
 }
 
 .h1 {
+  text-decoration: none;
+  color: #4b4b4b;
   font-size: 23px;
   font-weight :bold;
-  color: #4b4b4b;
-  text-decoration: none;
+  margin-right: 10vw;
 }
 
 .nav {
-  list-style: none;
+  font-size: 16px;
   display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 1vh 0;
 }
 
-.nav a {
+.lists-right {
+  display: flex;
+  list-style: none;
+  align-items: flex-end;
+}
+
+.pets-name {
+  text-decoration: none;
+  margin-right: 3vw;
+  color: #4b4b4b;
+}
+
+.pets-name:hover {
+  font-weight :bold;
+}
+
+.logout {
   text-decoration: none;
   color: #4b4b4b;
 }
 
-.li {
-  margin: 0 0 0 15px;
-  font-size: 14px;
+.logout:hover {
+  font-weight :bold;
 }
 
-.li:hover {
+.login {
+  text-decoration: none;
+  margin-right: 3vw;
+  color: #4b4b4b;
+}
+
+.login:hover {
+  font-weight :bold;
+}
+
+.sign-up {
+  text-decoration: none;
+  color: #4b4b4b;
+}
+
+.sign-up:hover {
   font-weight :bold;
 }
