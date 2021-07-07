@@ -42,7 +42,7 @@ class TweetsController < ApplicationController
   private
 
   def tweet_params
-    params.require(:tweet).permit(:energy_id,:food_id,:toilet_id,:poop_status_id,:exercise_id,:sleep_id,:different_id,:memo,:start_time).merge(user_id: current_user.id)
+    params.require(:tweet).permit(:energy_id,:food_id,:toilet_id,:poop_status_id,:exercise_id,:sleep_id,:different_id,:memo,:start_time,:image).merge(user_id: current_user.id)
   end
 
   def set_tweet
