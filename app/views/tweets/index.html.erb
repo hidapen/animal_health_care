@@ -1,7 +1,7 @@
 <%= render "shared/header" %>
 
 <div class="body">
-  <h1>RECORD</h1>
+  <h1 class="title">RECORD</h1>
   <li class="new"><%= link_to '記録する', new_tweet_path, class: "tweet" %></li>
   <%= month_calendar events: @tweets do |date, tweets| %>
     <%= date.day %>
