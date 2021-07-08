@@ -1,9 +1,17 @@
 <%= render "shared/header" %>
 
 <div class="contents">
-    <h1 class="title">編集</h1>
-    <%= form_with model: @tweet, local: true do |f| %>
-    <div class="form-group">
+  <h1 class="title">編集</h1>
+  <%= form_with model: @tweet, local: true do |f| %>
+  <div class="form-group">
+    <div class='form-time'>
+      <%= f.label :start_time, '日時' %>
+      <%= f.datetime_select(:start_time, class:"form-control") %>
+      <p class="comment">※記録したい日時を指定してください</p>
+    </div>
+  </div>
+
+  <div class="form-group">
     <div class='form-text-wrap'>
       <%= f.label :energy_id, '元気度' %>
       <%= f.collection_select(:energy_id, Energy.all, :id, :name, {}, {class:"form-control"}) %>
